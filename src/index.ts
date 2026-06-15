@@ -24,7 +24,7 @@ const app = new Elysia().get("/centralimg", async ({ query }) => {
 
   const script_path = "~/Documents/prog/image-culture/culture-raspimage-convert/useful_scripts/create_img.sh";
   const config_path = "~/Documents/prog/image-culture/culture-raspimage-convert/config.json";
-  const image_path = "~/Documents/prog/image-culture/culture-raspimage-convert/2026-04-21-raspios-trixie-arm64-lite.img";
+  const image_path = "/home/lrima/Documents/prog/image-culture/culture-raspimage-convert/2026-04-21-raspios-trixie-arm64-lite.img";
 
   await Bun.write(config_path, JSON.stringify(user_config));
   await $`${script_path}`;
