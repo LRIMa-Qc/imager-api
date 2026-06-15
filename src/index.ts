@@ -1,4 +1,4 @@
-import { Elysia } from "elysia";
+import { Elysia, file } from "elysia";
 import * as v from 'valibot'
 import { $ } from "bun";
 
@@ -28,6 +28,10 @@ const app = new Elysia().get("/centralimg", async ({ query }) => {
 
   await Bun.write(config_path, JSON.stringify(user_config));
   await $`${script_path}`;
+
+  console.log("Complete");
+
+  return file(image_path);
 }, {
   query: v.object({
     obj_id: v.string(),
